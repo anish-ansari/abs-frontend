@@ -1,0 +1,28 @@
+<p>Logged in user: <strong>{{fullName}}</strong></p>
+<a routerLink="/my-appointments">Go back</a><br><br>
+<div>
+  <form [formGroup]="newAppointmentForm" (ngSubmit)="saveAppointment()">
+    <label style="padding-right: 20px;">Service type</label>
+    <select id="serviceType" formControlName="serviceType">
+      <option value="" selected disabled hidden>Select service type</option>
+      <option value="Schedule My Behind-the-Wheel Drive Test">Schedule My Behind-the-Wheel Drive Test</option>
+      <option value="DL/ID Renewal">DL/ID Renewal</option>
+      <option value="DL/ID Application">DL/ID Application</option>
+      <option value="Entry-Level Training for Commercial Drivers">Entry-Level Training for Commercial Drivers</option>
+      <option value="Permits">Permits</option>
+      <option value="REAL ID Application">REAL ID Application</option>
+      <option value="Vehicle Registration">Vehicle Registration</option>
+    </select><br><br>
+
+    <label style="padding-right: 49px;">Appointment date</label>
+    <input type="date" id="date" formControlName="appointmentDate" /><br /><br />
+
+    <label style="padding-right: 23px;">Appointment time</label>
+    <input type="time" id="time" formControlName="appointmentTime" /><br /><br />
+
+    <label style="padding-right: 26px;">Office location</label>
+    <input type="text" id="office" formControlName="officeLocation" placeholder="Enter office location" /><br /><br />
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
