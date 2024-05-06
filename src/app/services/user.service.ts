@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
   api: string = 'http://localhost:8085/abs/api/v1/users';
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -15,10 +16,6 @@ export class UserService {
   };
 
   constructor(private http: HttpClient) { }
-
-  login(user: User): Observable<User> {
-    return this.http.post<User>(this.api.concat('/login'), user, this.httpOptions);
-  }
 
   signUp(user: User): Observable<string> {
     return this.http.post<string>(this.api.concat('/signup'), user, { responseType: 'text' as 'json' })
