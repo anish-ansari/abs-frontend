@@ -1,1 +1,33 @@
+<p>Logged in user: <strong>{{fullName}}</strong></p>
+<button>Log out</button>
 <p>appointment-list works!</p>
+<button routerLink="/new-appointment">New appointment</button>
+<p>Your appointments:</p>
+<table style="border: 1px solid black; width: 50%;">
+  <thead>
+    <tr>
+      <th>Service type</th>
+      <th>Appointment date</th>
+      <th>Appointment time</th>
+      <th>Office location</th>
+      <th>Status</th>
+      <div *ngIf="isAdmin">
+        <th>User ID</th>
+        <th>Full Name</th>
+      </div>
+      
+    </tr>
+  </thead>
+
+  <tbody>
+
+  </tbody>
+</table>
+
+<!-- i tried using jquery the monkey patch approach but it didn't work, so i installed jquery instead -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+  $('document').ready(function () {
+    $('#fullName').text(localStorage.getItem('fullName'));
+  });
+</script> -->
