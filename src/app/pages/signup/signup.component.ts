@@ -37,7 +37,7 @@ export class SignupComponent implements OnInit{
     this.userService.signUp(user).subscribe((result: string) => {
       if (result === 'success') {
         alert('Sign up success, please login now');
-        this.router.navigate(['']);
+        this.router.navigate(['/login']);
       }
       else if (result === 'User already exists')
         alert(result);
